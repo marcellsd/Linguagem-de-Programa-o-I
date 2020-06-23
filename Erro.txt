@@ -1,0 +1,59 @@
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h:148,
+                 from /usr/include/c++/9/ext/atomicity.h:35,
+                 from /usr/include/c++/9/bits/basic_string.h:39,
+                 from /usr/include/c++/9/string:55,
+                 from ../include/Diary.h:4,
+                 from ../include/App.h:4,
+                 from app.cpp:1:
+/usr/include/pthread.h:239:34: error: ‘clockid_t’ has not been declared
+  239 |                                  clockid_t __clockid,
+      |                                  ^~~~~~~~~
+/usr/include/pthread.h:750:9: error: ‘clockid_t’ has not been declared
+  750 |         clockid_t __clockid,
+      |         ^~~~~~~~~
+/usr/include/pthread.h:896:12: error: ‘clockid_t’ has not been declared
+  896 |            clockid_t __clockid,
+      |            ^~~~~~~~~
+/usr/include/pthread.h:918:12: error: ‘clockid_t’ has not been declared
+  918 |            clockid_t __clockid,
+      |            ^~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h:148,
+                 from /usr/include/c++/9/ext/atomicity.h:35,
+                 from /usr/include/c++/9/bits/basic_string.h:39,
+                 from /usr/include/c++/9/string:55,
+                 from ../include/Diary.h:4,
+                 from diary.cpp:1:
+/usr/include/pthread.h:239:34: error: ‘clockid_t’ has not been declared
+  239 |                                  clockid_t __clockid,
+      |                                  ^~~~~~~~~
+/usr/include/pthread.h:750:9: error: ‘clockid_t’ has not been declared
+  750 |         clockid_t __clockid,
+      |         ^~~~~~~~~
+/usr/include/pthread.h:896:12: error: ‘clockid_t’ has not been declared
+  896 |            clockid_t __clockid,
+      |            ^~~~~~~~~
+/usr/include/pthread.h:918:12: error: ‘clockid_t’ has not been declared
+  918 |            clockid_t __clockid,
+      |            ^~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h:148,
+                 from /usr/include/c++/9/ext/atomicity.h:35,
+                 from /usr/include/c++/9/bits/basic_string.h:39,
+                 from /usr/include/c++/9/string:55,
+                 from ../include/Diary.h:4,
+                 from ../include/App.h:4,
+                 from main.cpp:1:
+/usr/include/pthread.h:239:34: error: ‘clockid_t’ has not been declared
+  239 |                                  clockid_t __clockid,
+      |                                  ^~~~~~~~~
+/usr/include/pthread.h:750:9: error: ‘clockid_t’ has not been declared
+  750 |         clockid_t __clockid,
+      |         ^~~~~~~~~
+/usr/include/pthread.h:896:12: error: ‘clockid_t’ has not been declared
+  896 |            clockid_t __clockid,
+      |            ^~~~~~~~~
+/usr/include/pthread.h:918:12: error: ‘clockid_t’ has not been declared
+  918 |            clockid_t __clockid,
+      |            ^~~~~~~~~
