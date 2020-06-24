@@ -10,9 +10,7 @@ struct Diary{
     
     std::string filename;
 
-    
-
-    Message* message;
+    Message* messages;
     size_t messages_size;
     size_t messages_capacity;
 

@@ -7,6 +7,8 @@
 struct App{
     App(const std::string& filename);
     
+
+    //Posso inicializar o diary com o file name aqui?
     Diary diary;
 
     
@@ -19,3 +21,4 @@ struct App{
 };
 
 #endif
+
