@@ -1,2 +1,2 @@
-$ output_file.md
-$ diary
+$ src/diary.md
+$ .gitignore
