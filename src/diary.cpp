@@ -71,7 +71,6 @@ void Diary::load_diary(){
     while(!file.eof()){
         std::getline(file, line);
         char first_char = line[0];
-        char discards;
         
         Message m;
         
