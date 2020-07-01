@@ -6,6 +6,7 @@
 #include "Message.h"
 #include <iostream>
 #include <sstream>
+#include <vector>
 
 struct Diary{
 
@@ -21,6 +22,7 @@ struct Diary{
     void write(Message msg);
     void load_diary();
     void more_messages();
+    Message* search(std::string what);
     
 };
 

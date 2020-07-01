@@ -23,6 +23,8 @@ int App::run(int argc, char* argv[]){
         }
     } else if (action == "list") {
         list_messages();
+    } else if (action == "search"){
+      search();
     } else {
         return show_usage(argv[0]);
     }
@@ -56,4 +58,19 @@ int App::show_usage(const std::string& program_name){
     std::cout << " or  simply: " << program_name << " add." << std::endl;
     std::cout << "> To list: " << program_name << " list." << std::endl;
     return 1;
+}
+
+void App::search(){
+    std::string what;
+
+    std::cout << "Please, enter the word to search:" << std::endl;
+    std::getline(std::cin, what);
+    
+    Message* strcpr_return = diary.search(what);
+
+    if(strcpr_return != nullptr){
+        std::cout << strcpr_return->content << std::endl;
+    } else{
+        std::cout << "Word not found!" << std::endl;
+    }
 }

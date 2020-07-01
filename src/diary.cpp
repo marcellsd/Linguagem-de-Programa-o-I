@@ -62,7 +62,7 @@ void Diary::load_diary(){
     std::string line;
 
     if (!file.is_open()){
-        std::cerr << "File do not exist or you don't have permission to open it." << std::endl;
+        std::cerr << "File created!" << std::endl;
         return;
     }
     
@@ -99,13 +99,26 @@ void Diary::more_messages(){
     messages_capacity*=2;
     Message* moremsgs = new Message[messages_capacity];
 
-    for (size_t i = 0; i < messages_size; i++)
-    {
+    for (size_t i = 0; i < messages_size; i++){
         moremsgs[i] = messages[i];
-        
     }
+
     delete[] messages;
     messages = moremsgs;
     
+}
+
+ Message* Diary::search(std::string what){
+
+    for (size_t i=0; i < messages_size + 1; i++){
+
+        std::size_t strcpr = messages[i].content.find(what);
+        
+        if (strcpr < messages[i].content.npos) {
+            return &messages[i];
+        }
+    }
+  
+  return nullptr;
 
 }
