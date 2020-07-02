@@ -65,12 +65,17 @@ void App::search(){
 
     std::cout << "Please, enter the word to search:" << std::endl;
     std::getline(std::cin, what);
-    
-    Message* strcpr_return = diary.search(what);
+    std::vector<Message> m;
+    std::vector<Message*> strcpr_return = diary.search(what);
 
-    if(strcpr_return != nullptr){
-        std::cout << strcpr_return->content << std::endl;
-    } else{
+    if(strcpr_return.size() == 0){
         std::cout << "Word not found!" << std::endl;
+        return;
+    } else{
+        for (size_t i = 0; i < strcpr_return.size(); i++)
+        {
+            std::cout << strcpr_return[i]->date.to_string() << " " << strcpr_return[i]->time.to_string() << " " << strcpr_return[i]->content << std::endl;
+        }
+        
     }
 }
