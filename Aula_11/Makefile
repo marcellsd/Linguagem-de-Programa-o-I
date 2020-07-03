@@ -19,3 +19,7 @@ date.o: src/date.cpp
 
 time.o: src/time.cpp
 	$(GCC) $(GCC_FLAGS) -c src/time.cpp
+
+.PHONY : clean
+clean :
+		rm *.o 
