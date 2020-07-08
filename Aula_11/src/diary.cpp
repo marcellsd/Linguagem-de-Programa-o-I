@@ -1,7 +1,9 @@
 #include "Diary.h"
+#include "App.h"
 
 
-Diary::Diary(const std::string& filename) : filename(filename), messages_size(0){
+Diary::Diary(const std::string& filename) : filename(filename),messages_size(0){
+    Diary::config_path();
     Diary::load_diary();
 }
 
@@ -22,12 +24,13 @@ void Diary::add(const std::string& message){
 void Diary::write(Message msg){
     
     std::ofstream file;
+    filename = path;
     file.open(filename, std::ios::app);
 
-    if (!file.is_open()){
+    /*if (!file.is_open()){
         std::cerr << "File do not exist or you don't have permission to open it." << std::endl;
         return;
-    }
+    }*/
     
     if (msg.date.day != messages[messages_size - 2].date.day ||
         msg.date.month != messages[messages_size - 2].date.month || 
@@ -50,11 +53,12 @@ void Diary::write(Message msg){
 void Diary::load_diary(){
     
     std::ifstream file;
+    filename = path;
     file.open(filename);
     std::string line;
 
     if (!file.is_open()){
-        std::cerr << "File created!" << std::endl;
+        std::cerr << "File not found!" << std::endl;
         return;
     }
     
@@ -101,4 +105,48 @@ void Diary::load_diary(){
   
   return message_return;
 
+}
+
+void Diary::config_path(){
+    std::ifstream config_file;
+    config_file.open("diary.config");
+    std::string line;
+
+    if (!config_file.is_open()){
+        std::ofstream config_new_file("diary.config",std::ofstream::out);
+        config_new_file << "path=diary.md" << std::endl;
+        config_new_file << "default_format=%d %t: %m" << std::endl;
+        config_file.open("diary.config");
+        std::cout << "A new diary config file has been created." << std::endl;
+    }
+        
+    while(!config_file.eof())
+    {
+       std::getline(config_file, line);
+       
+       std::vector<int> pos;
+       pos.push_back(0);
+       int end_instruction = 0;
+       
+       for (size_t i = 0; i < line.length(); i++)
+       {
+            if (line[i] == '=' && end_instruction == 0)
+            {
+                pos.push_back(i);
+                pos.push_back(i+1);
+                end_instruction++;
+            }
+
+            if ((i+1) == line.length())
+            {
+                end_instruction = 0;
+            }
+       }
+  
+       if (line.substr(pos[0],pos[1]) == "path")
+       {
+           path = line.substr(pos[1]+1);
+       }
+    }
+    
 }

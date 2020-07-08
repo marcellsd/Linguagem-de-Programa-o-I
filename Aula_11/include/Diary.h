@@ -11,6 +11,7 @@
 struct Diary{
 
     Diary(const std::string& filename);
+    std::string path;
     std::string filename;
     std::vector<Message> messages;
     size_t messages_size;
@@ -19,7 +20,7 @@ struct Diary{
     void load_diary();
     void more_messages();
     std::vector<Message*> search(std::string what);
-    
+    void config_path();
 };
 
 #endif

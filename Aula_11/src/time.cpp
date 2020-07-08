@@ -58,3 +58,30 @@ std::string Time::format_current_time(const std::string &format) {
 }
 
 std::string Time::get_current_time() { return format_current_time("- %H:%M:%S"); }
+
+std::string Time::to_string_list(){
+    
+    std::stringstream stream;
+
+    if (hour<10){
+        stream << '0';
+    }
+    
+    stream << hour;
+    stream << ":";
+    
+    if (minute<10){
+        stream << '0';
+    }
+    
+    stream << minute;
+    stream << ":";
+    
+    if (second<10){
+        stream << '0';
+    }
+    
+    stream << second;
+
+    return stream.str();
+}

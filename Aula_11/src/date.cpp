@@ -53,3 +53,25 @@ std::string Date::format_current_date(const std::string &format) {
 }
 
 std::string Date::get_current_date() { return format_current_date("# %d/%m/%Y"); }
+
+std::string Date::to_string_list(){
+    
+    std::stringstream stream;
+    
+    if (day<10){
+        stream << '0';
+    }
+    
+    stream << day;
+    stream << "/";
+    
+    if (month<10){
+        stream << '0';
+    }
+    
+    stream << month;
+    stream << "/";
+    stream << year;
+
+    return stream.str();
+}

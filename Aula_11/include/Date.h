@@ -16,6 +16,7 @@ struct Date{
     std::string to_string();
     std::string format_current_date(const std::string &format);
     std::string get_current_date();
+    std::string to_string_list();
 };
 
 #endif
