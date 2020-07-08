@@ -19,5 +19,11 @@ int main(){
     c.freia (20);
     cout << "A velocidade atual é: " << c.velocidade << "KM/H" << endl;
 
+    cout << "O número de carros é: " << c.numeroDeCarros << endl;
+
+    Carro a;
+
+        cout << "O número de carros é: " << c.numeroDeCarros << endl;
+
     return 0;
 }
