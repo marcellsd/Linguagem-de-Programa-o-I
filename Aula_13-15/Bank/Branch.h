@@ -1,3 +1,5 @@
+#ifndef BRANCH_H
+#define BRANCH_H
 #include <string>
 
 class Branch
@@ -9,3 +11,5 @@ public:
     std::string branchName;
     std::string branchNumber;
 };
+
+#endif 

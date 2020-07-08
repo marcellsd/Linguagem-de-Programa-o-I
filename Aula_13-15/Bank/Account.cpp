@@ -1,4 +1,7 @@
 #include "Account.h"
+
+int Account::numberOfAccounts;
+
 Account::Account(std::string customerName_, std::string accountNumber_, std::string customerCpf_ , std::string branchNumber_)
 {
     this->number = accountNumber_;
@@ -7,6 +10,10 @@ Account::Account(std::string customerName_, std::string accountNumber_, std::str
     this->customer.cpf = customerCpf_;
     this->customer.name = customerName_;
     this->branch.branchNumber = branchNumber_;
+    this->numberOfAccounts +=1;
+}
+Account::Account(){
+    this->numberOfAccounts +=1;
 }
 
 void Account::withdraw(float amount)
