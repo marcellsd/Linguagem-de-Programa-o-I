@@ -27,13 +27,16 @@ int main()
         {
             f.setDepartamento("Financeiro");
         }
-        else if ((i%5) == 3)
+        else if ((i%5) == 2)
         {
             f.setDepartamento("Vendas");
         }
          else if ((i%5) == 4)
         {
             f.setDepartamento("Desenvolvimento");
+        } else 
+        {
+            f.setDepartamento("Serviços Gerais");
         }
         funcionarios.push_back(f);
     }
